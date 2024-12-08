@@ -1,0 +1,285 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  
+  /*---- apply a natural box layout model to all elements -------*/
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  
+  body {
+    font-family: $defaultFont;
+    font-weight: $mediumWeight;
+    color: $fontColor;
+}
+
+#headerWrapper {
+  background-color: rgb(240, 207, 222);
+  color: $secondaryColor;
+
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem $gutter;
+  gap: 20px;
+  h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: $mediumWeight;
+    color: rgb(0, 0, 0);
+  }
+}
+
+#navWrapper{
+  background-color:$menuColor;
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  ul {
+    list-style-type: none; //gets rid of bullets
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {flex: 1;} //dividing items evenly
+  }
+  li.active {background-color: darken($menuColor, 10%); }
+  a {
+    display: block;
+    padding: 0.75rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none; //gets rid of underline under each item
+    img {width: 25px;}
+    span {display: none;}
+    &:hover {background-color: lighten($menuColor, 10%) ;}
+  }
+}
+
+
+
+
+
+section {
+  height: auto;
+  margin-bottom: 2rem; /* Adds space between sections */
+  padding: 2rem; /* Ensures content inside each section doesn’t "touch" the edges */
+}
+
+
+// begin the footer
+
+#footerWrapper {
+  background-color: orange;
+}
+footer {
+  padding: 0.5rem $gutter;
+  p {
+    margin: 0;
+    font-weight: $lightWeight;
+    text-align: center;
+  }
+}
+
+//styling the rows
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  
+
+
+
+}
+
+  .card1, .card2, .card3 {
+    background-color: #EEEEE7;
+    border-radius: 14px;
+  }
+
+  #mainWrapper {
+    max-width: 1200px; /* Consistent width for all sections */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+main {
+  .text {
+    padding: 1rem;
+  }
+
+  #about {
+    background-color: #0B4C54; 
+    text-align: center;
+    font-size: 2rem;
+    color: #EEEEE7;
+    padding-top: 3rem;
+  }
+
+  #resume {
+    background-color: #5C633A;
+    color:#EEEEE7;
+    h4 {
+      color:#000000;}
+      p{color:rgb(0, 0, 0)}
+
+  }
+
+  #contact {
+    background-color: #E7C878;
+
+  }
+
+}
+
+
+//styling the columns
+
+
+@for $i from 1 through 12 {
+   $w: calc($i / 12) *100%;
+   .small-#{$i} { flex-basis: $w; }
+}
+
+
+.line, .round, .fill, .shadow {padding: 16px 16px;}
+.line{border: 1px #eee solid;}
+.round{border-radius: 9px;}
+.fill{background-color: teal;}
+.shadow{box-shadow: 0 0 10px #eee;}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px));
+  gap: 10px 8px;
+
+}
+
+
+section div {
+  width: 100%;
+  padding: 0.5rem $gutter;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 200px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+}
+  //end section
+
+
+  form.my-form {
+    margin: 1rem $gutter;
+    display: block;
+  
+    label {
+      display: block;
+      font-size: .8rem;
+      color: rgb(0, 0, 0);
+      padding-top: .2rem;
+      margin-bottom: 8px
+    }
+  
+    h3 {
+      font-size: .9rem;
+      color:rgb(22, 50, 190);
+      margin: 1.5rem 0 .2rem 0;
+      border-bottom: 1px solid teal;
+    }
+  input[type=text], 
+  input[type=tel], 
+  input[type=number], 
+  input[type=email], 
+  input[type=password], 
+  select {
+    display: block;
+    margin: .1rem 0 1rem 0;
+    border: 1px solid rgb(0, 60, 128);
+    border-radius: 3px 3px 0 0;
+    border-bottom-width: 5px;
+    font-size: 1rem;
+    color:rgb(0, 0, 0);
+    width: 250px;
+    padding: .5rem $gutter;
+  }
+  
+  input:required {border-bottom-color: red ;}
+  input:focus{border-bottom-color: grey;}
+  input:required:valid {border-bottom-color:green ;}
+  
+  
+  input [type=submit] {
+    border: none;
+    color: yellow;
+    background-color: rgb(253, 255, 255);
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 2rem 0;
+    width: 250px;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+    appearance: none;
+  } }
+
+  .card2 {
+    border: solid $miscColor;
+    background-color: lighten($miscColor, 40%);
+  }
+
+  #project h2 {
+    margin: .5rem;
+  }
+
+  #project p {
+    margin: 0;
+  }
+
+  h2, p {
+    padding-left: $gutter;
+  }
+
+  #education {
+        background-color: #E7C878;
+        .card2 {
+          background-color: lighten(#E7C878, 20%);
+          margin: 2rem;
+          max-width: 70%;
+        }
+  }
+
+  #contact {
+    div {
+
+    
+color:rgb(22, 50, 190)}
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0; /* Adjust spacing around headings */
+  }
+  
+  p {
+    margin: 0.5rem 0; /* Reduce spacing around paragraphs */
+  }
+  
+  .row {
+    display: flex; /* For aligning items horizontally */
+    justify-content: space-between; /* Or center, if that’s the goal */
+    align-items: center; /* Aligns items vertically */
+  }
+  

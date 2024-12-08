@@ -1,0 +1,43 @@
+header,nav, main, footer {
+    max-width: 60rem;
+    margin: auto;
+
+}
+
+body {
+    display: grid;
+    grid-template-columns: 250px auto;
+
+}
+#navWrapper {
+    grid-row: 1 / span 3;
+    position: relative;
+}
+
+nav ul {
+    display: flex; /* Ensure flexbox is applied */
+    flex-direction: column; /* Stack items vertically */
+    height: 100vh; /* Full height of the viewport */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    position: fixed; /* Fix the nav in place */
+    font-size: 1.25rem; /* Adjust font size */
+    padding: 40px;
+
+
+    li {
+        flex: none; /* Ensure `li` items don’t stretch */
+    }
+
+}
+
+/* NAVIGATION STUFF GOES HERE  */
+
+//create the for loop
+@for $i from 1 through 12 {
+    $w: calc($i / 12) *100%;
+
+    .large-#{$i} {
+        flex-basis: $w;
+    }
+}
