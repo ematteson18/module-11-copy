@@ -352,6 +352,10 @@ header h1 {
   top: 0;
 }
 
+.btn {
+  background-color: #DFF188;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -408,12 +412,12 @@ footer p {
 .card1, .card2, .card3 {
   background-color: #EEEEE7;
   border-radius: 14px;
+  margin: 0;
 }
 
 #mainWrapper {
   max-width: 1200px; /* Consistent width for all sections */
   margin: 0 auto;
-  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -438,7 +442,7 @@ main #resume p {
   color: rgb(0, 0, 0);
 }
 main #contact {
-  background-color: #E7C878;
+  background-color: #b4cce3;
 }
 
 .small-1 {
@@ -588,16 +592,8 @@ form.my-form input [type=submit] {
   background-color: #c1c8a1;
 }
 
-#project h2 {
-  margin: 0.5rem;
-}
-
 #project p {
   margin: 0;
-}
-
-h2, p {
-  padding-left: 16px;
 }
 
 #education {
@@ -619,6 +615,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin: 0.5rem 0; /* Reduce spacing around paragraphs */
+  padding: 0;
+  font-weight: 300;
 }
 
 .row {

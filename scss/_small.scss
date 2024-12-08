@@ -46,6 +46,9 @@ header {
   top: 0;
 }
 
+.btn {
+  background-color: #DFF188;
+}
 nav {
   ul {
     list-style-type: none; //gets rid of bullets
@@ -106,12 +109,13 @@ footer {
   .card1, .card2, .card3 {
     background-color: #EEEEE7;
     border-radius: 14px;
+    margin: 0;
   }
 
   #mainWrapper {
     max-width: 1200px; /* Consistent width for all sections */
     margin: 0 auto;
-    padding: 20px;
+
     box-sizing: border-box;
 }
 
@@ -138,7 +142,7 @@ main {
   }
 
   #contact {
-    background-color: #E7C878;
+    background-color: #b4cce3;
 
   }
 
@@ -242,17 +246,13 @@ section div {
     background-color: lighten($miscColor, 40%);
   }
 
-  #project h2 {
-    margin: .5rem;
-  }
+
 
   #project p {
     margin: 0;
   }
 
-  h2, p {
-    padding-left: $gutter;
-  }
+ 
 
   #education {
         background-color: #E7C878;
@@ -275,6 +275,8 @@ color:rgb(22, 50, 190)}
   
   p {
     margin: 0.5rem 0; /* Reduce spacing around paragraphs */
+    padding: 0;
+    font-weight: $lightWeight;
   }
   
   .row {
